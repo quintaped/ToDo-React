@@ -1,30 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
-import Header from './Header';
-import Footer from './Footer';
-
+import React from 'react';
+import MyHeader from './MyHeader';
+import MyFooter from './MyFooter';
 
 function App() {
   return (
     <div className="App">
-      <Header logoWidth="200px" titleText="Hello,world!"/>
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          hello <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    <footer>
-      copyright
-    </footer>
+      <MyHeader logoSize={200} >
+        This text is from App.jsx
+        <h2>H2</h2>
+      </MyHeader>
+
+      <h1>Hello!</h1>
+      <p>Hello, world</p>
+      <MyHeader logoSize={300}>
+        Double header
+      </MyHeader>
+     
+      <MyFooter>
+    All rights reserved
+     
+      </MyFooter>
     </div>
   );
 }
