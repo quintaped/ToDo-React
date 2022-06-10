@@ -1,6 +1,8 @@
-import React from 'react';
+import logo from './logo.svg';
 import './App.css';
+import React from 'react';
 import MyHeader from './MyHeader';
+import MyFooter from './MyFooter';
 
 function App() {
   return (
@@ -14,6 +16,10 @@ function App() {
       <MyHeader logoSize={300}>
         Double header
       </MyHeader>
+     
+      <MyFooter>
+        All rights reserved
+      </MyFooter>
     </div>
   );
 }
