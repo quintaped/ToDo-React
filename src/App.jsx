@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 import MyHeader from './MyHeader';
@@ -19,8 +18,7 @@ function App() {
       </MyHeader>
      
       <MyFooter>
-    All rights reserved
-     
+        All rights reserved
       </MyFooter>
     </div>
   );
