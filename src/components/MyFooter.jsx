@@ -7,7 +7,6 @@ const MyFooter = (props) => {
   const year= currentDate.getFullYear();
   return (
     <footer>
-      
       <p>
         {children} {year}
       </p>
