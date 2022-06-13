@@ -40,4 +40,8 @@
 .FlWr {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+.button {
+  background-color: red;
 }
