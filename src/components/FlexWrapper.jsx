@@ -1,13 +1,11 @@
 import React from 'react';
 
 const FlexWrapper = (props) => {
-    const { children } = props; 
-    const { width } = props; 
+    const { children, width } = props;
     return (
-        <>
-        <div>{width}</div>
-        <div>{children}</div>
-        </>
+        <div width={width} className="FlWr">
+            {children}
+        </div>
     );
   };
   

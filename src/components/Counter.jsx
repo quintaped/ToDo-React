@@ -1,10 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
+import FlexWrapper from './FlexWrapper';
 
 const Counter = (props) => {
-  const { children, onClick } = props;
+  const { startCounter } = props;
+  const [counter, setCounter] = useState(startCounter);
+
+  const increment = () => {
+    if (counter < 0){
+      setCounter(0);
+    } else {
+      setCounter(counter + 1);
+    }
+  }
+
+  const reduction = () => {
+    if (counter <= 0) return;
+    setCounter(counter - 1);
+  }
 
   return (
-    <button onClick={onClick}>{children}</button>
+    <FlexWrapper width="300">
+      <button onClick={reduction}>-</button>
+      {counter}
+      <button onClick={increment}>+</button>
+    </FlexWrapper>
   );
 };
 
