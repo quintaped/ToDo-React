@@ -37,8 +37,7 @@
     transform: rotate(360deg);
   }
 }
-
-.Main{
+.FlWr {
   display: flex;
   justify-content: space-between;
 }
