@@ -39,4 +39,16 @@
 .FlWr {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
+.footer{
+  background-color: rgb(187, 36, 221);
+  color: #fff;
+}
+.header {
+  background-color: bisque;
+  color: blueviolet;
+}
+.button {
+  background-color: red;
+} 

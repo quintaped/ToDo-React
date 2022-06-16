@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import FlexWrapper from './FlexWrapper';
+import classes from './Counter.module.css';
 
 const Counter = (props) => {
   const { startCounter } = props;
@@ -19,10 +20,10 @@ const Counter = (props) => {
   }
 
   return (
-    <FlexWrapper width="300">
-      <button onClick={reduction}>-</button>
+    <FlexWrapper width={100}>
+    <button className={classes.button} onClick={reduction}>-</button>
       {counter}
-      <button onClick={increment}>+</button>
+    <button className={classes.button} onClick={increment}>+</button>
     </FlexWrapper>
   );
 };
