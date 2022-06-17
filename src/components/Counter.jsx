@@ -3,20 +3,23 @@ import FlexWrapper from './FlexWrapper';
 import classes from './Counter.module.css';
 
 const Counter = (props) => {
-  const { startCounter } = props;
+  const { startCounter, onChange = () => {} } = props;
   const [counter, setCounter] = useState(startCounter);
 
   const increment = () => {
     if (counter < 0){
       setCounter(0);
+      onChange(counter);
     } else {
       setCounter(counter + 1);
+      onChange(counter);
     }
   }
 
   const reduction = () => {
     if (counter <= 0) return;
     setCounter(counter - 1);
+    onChange(counter);
   }
 
   return (
