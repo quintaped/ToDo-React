@@ -21,9 +21,9 @@ const Counter = (props) => {
 
   return (
     <FlexWrapper width={100}>
-      <button className={classes.button} onClick={reduction}>-</button>
+    <button className={classes.button} onClick={reduction}>-</button>
       {counter}
-      <button className={classes.button} onClick={increment}>+</button>
+    <button className={classes.button} onClick={increment}>+</button>
     </FlexWrapper>
   );
 };

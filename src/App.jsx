@@ -10,11 +10,8 @@ import Button from './components/Button';
 function App() {
   return (
     <div className="App">
-      <MyHeader logoSize={200} >
-        This text is from App.jsx
-        <h2>H2</h2>
-      </MyHeader>
-      <MyHeader logoSize={300}>
+
+      <MyHeader logoSize={300}  fontSize={32}>
         Double header
       </MyHeader>
       
@@ -29,7 +26,7 @@ function App() {
       </FlexWrapper>
       <button className="button">TEST</button>
       
-      <MyFooter>
+      <MyFooter  fontSize={12}>
         All rights reserved
       </MyFooter>
     </div>
