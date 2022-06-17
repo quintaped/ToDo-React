@@ -9,14 +9,13 @@ const SettingsMenu = (props) => {
   const { onSetHeader, onSetFooter, footerFontSize, headerFontSize } = props;
   const [fontSizeBoth, setFontSizeBoth] = useState(14);
   const onApplyBoth = () => {
-    console.log(fontSizeBoth);
     onSetHeader(fontSizeBoth);
     onSetFooter(fontSizeBoth);
   };
   const onChangeBoth = (e) => {
-    const value = e.target.value;
+    const value = +e.target.value;
     if (value >= 0) {
-      setFontSizeBoth(e.target.value);
+      setFontSizeBoth(value);
     } else {
       setFontSizeBoth(0);
     }

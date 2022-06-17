@@ -36,10 +36,7 @@ function App() {
         <SettingsMenu 
           footerFontSize={footerFontSize} 
           headerFontSize={headerFontSize} 
-          onSetHeader={(val) => {
-            console.log('onSetHeader', val);
-            setHeaderFontSize(val)
-          }} 
+          onSetHeader={setHeaderFontSize} 
           onSetFooter={setFooterFontSize} 
         />
       }
