@@ -14,6 +14,7 @@ const SettingsMenu = (props) => {
   };
   const onChangeBoth = (e) => {
     const value = +e.target.value;
+    console.log(1);
     if (value >= 0) {
       setFontSizeBoth(value);
     } else {

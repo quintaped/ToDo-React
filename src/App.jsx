@@ -17,7 +17,7 @@ function App() {
     <div className="App">
 
       <MyHeader logoSize={300}  fontSize={headerFontSize}>
-        Double header
+        Hello, anonymous!
       </MyHeader>
       
       <FlexWrapper width={300}>
