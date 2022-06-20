@@ -6,6 +6,9 @@ import Counter from './components/Counter';
 import FlexWrapper from './components/FlexWrapper';
 import Button from './components/Button';
 import SettingsMenu from './components/SettingsMenu';
+import MyInput from './components/MyInput/MyInput';
+import GuestList from './components/GuestList/GuestList';
+// import List from './components/List/List';
 
 
 function App() {
@@ -13,11 +16,12 @@ function App() {
   const onToggleMenu = () => setShowSettings(!showSettings);
   const [headerFontSize, setHeaderFontSize] = useState(14);
   const [footerFontSize, setFooterFontSize] = useState(14);
+  const [headerName, setHeaderName] = useState('Anonymous');
   return (
     <div className="App">
 
       <MyHeader logoSize={300}  fontSize={headerFontSize}>
-        Hello, anonymous!
+        Hello, {headerName}!
       </MyHeader>
       
       <FlexWrapper width={300}>
@@ -40,6 +44,9 @@ function App() {
           onSetFooter={setFooterFontSize} 
         />
       }
+      <MyInput defaultValue="Anonymous" />
+      {/* <List /> */}
+      <GuestList/>
       <MyFooter  fontSize={footerFontSize}>
         All rights reserved
       </MyFooter>
