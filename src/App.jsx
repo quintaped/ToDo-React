@@ -5,24 +5,29 @@ import MyFooter from './components/MyFooter';
 import Counter from './components/Counter';
 import FlexWrapper from './components/FlexWrapper';
 import Button from './components/Button';
+import MyInput from './components/MyInp/MyInput';
+import List from './components/List/List'
 
 
 
 function App() {
   const [showSettings, setShowSettings] = useState(false);
   const onToggleMenu = () => setShowSettings(!showSettings);
+  const [headerName,setHeaderName]= useState ('Anonymous')
   return (
     <div className="App">
+
+
       <Button onClick={onToggleMenu} className='btn'>
       {showSettings ? 'Close My Profile' : '  Open My Profile'}
       
       </Button>
-
-
-      <FlexWrapper width={300}>
-        <h1>Hello!</h1>
-        <p>Hello, world</p>
-      </FlexWrapper>
+      <MyHeader logoSize ={200}>    
+        Hello,{headerName}!
+         <MyInput onSetHeaderName={setHeaderName} headerName={headerName}/>
+      </MyHeader>
+    
+       <List/>
 
       <Counter startCounter={10} />
       <Counter startCounter={100} />
