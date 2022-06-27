@@ -52,5 +52,16 @@
 }
 .button {
   background-color: red;
-  color: #fff;
 } 
+.btn{
+  color: rgb(155, 250, 204);
+  right: 500px;
+  align-items: center;
+  position: absolute;
+  /* display: flex; */
+  
+}
+.inp{
+  right: 500px;
+
+}

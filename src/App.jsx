@@ -3,13 +3,7 @@ import React, { useState } from 'react';
 import MyHeader from './components/MyHeader';
 import MyFooter from './components/MyFooter';
 import Counter from './components/Counter';
-import FlexWrapper from './components/FlexWrapper';
-import Button from './components/Button';
-import SettingsMenu from './components/SettingsMenu';
-import MyInput from './components/MyInput/MyInput';
-import GuestList from './components/GuestList/GuestList';
-// import List from './components/List/List';
-
+import List from './components/List/List'
 
 function App() {
   const [showSettings, setShowSettings] = useState(false);
@@ -19,15 +13,9 @@ function App() {
   const [headerName, setHeaderName] = useState('Anonymous');
   return (
     <div className="App">
-
-      <MyHeader logoSize={300}  fontSize={headerFontSize}>
-        Hello, {headerName}!
-      </MyHeader>
-      
-      <FlexWrapper width={300}>
-        <h1>Hello!</h1>
-        <p>Hello, world</p>
-      </FlexWrapper>
+      <MyHeader logoSize ={200} />
+    
+       <List/>
 
       <FlexWrapper>
         <Counter startCounter={10} />

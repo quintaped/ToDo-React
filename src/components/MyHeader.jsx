@@ -1,18 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from '../assets/logo.svg';
 import FlexWrapper from './FlexWrapper';
+import Button from './Button';
+import MyInput from './MyInp/MyInput';
 import '../App.css';
 
 const MyHeader = (props) => {
-  const { children ,fontSize} = props; // props.children
+  const { fontSize} = props; // props.children
   const { logoSize } = props; // props.logoSize
   const styles={ fontSize:  fontSize};
+  const [showSettings, setShowSettings] = useState(false);
+  const onToggleMenu = () => setShowSettings(!showSettings);
+  const [headerName, setHeaderName]= useState ('Anonymous');
   return (
     <header className="header">
       <FlexWrapper>
         <img width={logoSize} src={logo} />
-        <p   style={styles}>
-          {children}
+        <p style={styles}>
+          <Button onClick={onToggleMenu} className='btn'>
+            {showSettings ? 'Close My Profile' : '  Open My Profile'}
+          </Button>
+          Hello,{headerName}!
+          {showSettings &&  <MyInput onSetHeaderName={setHeaderName} headerName={headerName}/>}
         </p>
       </FlexWrapper>
     </header>
