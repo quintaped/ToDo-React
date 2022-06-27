@@ -1,41 +1,22 @@
 import './App.css';
-import React, { useState } from 'react';
+import React from 'react';
 import MyHeader from './components/MyHeader';
 import MyFooter from './components/MyFooter';
 import Counter from './components/Counter';
-import List from './components/List/List'
+import List from './components/List/List';
+import GuestList from './components/GuestList/GuestList';
 
 function App() {
-  const [showSettings, setShowSettings] = useState(false);
-  const onToggleMenu = () => setShowSettings(!showSettings);
-  const [headerFontSize, setHeaderFontSize] = useState(14);
-  const [footerFontSize, setFooterFontSize] = useState(14);
-  const [headerName, setHeaderName] = useState('Anonymous');
   return (
     <div className="App">
       <MyHeader logoSize ={200} />
     
        <List/>
 
-      <FlexWrapper>
-        <Counter startCounter={10} />
-        <Counter startCounter={100} />
-      </FlexWrapper>
-      <Button onClick={onToggleMenu} className="button">
-        {showSettings ? 'Close Settings' : 'Open Settings'}
-      </Button>
-      {showSettings && 
-        <SettingsMenu 
-          footerFontSize={footerFontSize} 
-          headerFontSize={headerFontSize} 
-          onSetHeader={setHeaderFontSize} 
-          onSetFooter={setFooterFontSize} 
-        />
-      }
-      <MyInput defaultValue="Anonymous" />
-      {/* <List /> */}
+      <Counter startCounter={10} />
+      <Counter startCounter={100} />
       <GuestList/>
-      <MyFooter  fontSize={footerFontSize}>
+      <MyFooter  fontSize={14}>
         All rights reserved
       </MyFooter>
     </div>

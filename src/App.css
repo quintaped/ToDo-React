@@ -54,12 +54,9 @@
   background-color: red;
 } 
 .btn{
-  color: rgb(155, 250, 204);
+  color: rgb(27, 56, 42);
   right: 500px;
-  align-items: center;
-  position: absolute;
-  /* display: flex; */
-  
+  align-items: center;  
 }
 .inp{
   right: 500px;

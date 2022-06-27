@@ -3,7 +3,7 @@ import logo from '../assets/logo.svg';
 import FlexWrapper from './FlexWrapper';
 import Button from './Button';
 import MyInput from './MyInp/MyInput';
-import '../App.css';
+import styles from './MyHeader.module.css';
 
 const MyHeader = (props) => {
   const { fontSize} = props; // props.children
@@ -17,7 +17,7 @@ const MyHeader = (props) => {
       <FlexWrapper>
         <img width={logoSize} src={logo} />
         <p style={styles}>
-          <Button onClick={onToggleMenu} className='btn'>
+          <Button onClick={onToggleMenu} className={styles.btn}>
             {showSettings ? 'Close My Profile' : '  Open My Profile'}
           </Button>
           Hello,{headerName}!
