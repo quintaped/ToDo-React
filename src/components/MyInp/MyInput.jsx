@@ -2,14 +2,16 @@ import React, { useState } from 'react';
 
 
 const MyInput = (props) => {
-  const { headerName = '' } = props;
-  const [value, setHeaderName] = useState(headerName);
-  const onSetHeaderName = (e) => setHeaderName(e.target.value);
+  const { headerName = '', onSetHeaderName } = props;
+  const [value, setValue] = useState(headerName);
+  const onChange = (e) => { 
+    setValue(e.target.value); 
+    onSetHeaderName(e.target.value);
+  }
   
   return (
-      <div>
-            
-        <input onChange={onSetHeaderName}  headerName={value}  />
+      <div>  
+        <input onChange={onChange}  value={value}  />
         {value}
       </div>
   );

@@ -9,7 +9,7 @@ const List = (props) => {
   return (
     <ul>
      {list.map((element, index) => {
-      return (<li key={index}>{element=numb()}</li>);
+      return (<li key={index}>{numb()}</li>);
      })}
     </ul>
   );

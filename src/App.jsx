@@ -1,31 +1,14 @@
 import './App.css';
-import React, { useState } from 'react';
+import React from 'react';
 import MyHeader from './components/MyHeader';
 import MyFooter from './components/MyFooter';
 import Counter from './components/Counter';
-import FlexWrapper from './components/FlexWrapper';
-import Button from './components/Button';
-import MyInput from './components/MyInp/MyInput';
 import List from './components/List/List'
 
-
-
 function App() {
-  const [showSettings, setShowSettings] = useState(false);
-  const onToggleMenu = () => setShowSettings(!showSettings);
-  const [headerName,setHeaderName]= useState ('Anonymous')
   return (
     <div className="App">
-
-
-      <Button onClick={onToggleMenu} className='btn'>
-      {showSettings ? 'Close My Profile' : '  Open My Profile'}
-      
-      </Button>
-      <MyHeader logoSize ={200}>    
-        Hello,{headerName}!
-         <MyInput onSetHeaderName={setHeaderName} headerName={headerName}/>
-      </MyHeader>
+      <MyHeader logoSize ={200} />
     
        <List/>
 

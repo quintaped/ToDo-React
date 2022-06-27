@@ -1,26 +1,14 @@
-import React, { useState } from 'react';
-import FlexWrapper from './FlexWrapper';
-import MyHeader from './MyHeader';
+import React from 'react';
 
 
 const Button = (props) => {
 
-    const { children, onClick} = props;
+  const { children, onClick} = props;
  
   return (
-    <div>
-      
-    <MyHeader logoSize={300}  fontSize={32}>
-       <button className='btn' onClick={onClick} >{children}
-     
-       </button>
-      <div ></div>
-       
-    
-      </MyHeader>
-
-   
-    </div>
+    <button className='btn' onClick={onClick} >{children}
+      {children}
+    </button>
   );
 };
 
