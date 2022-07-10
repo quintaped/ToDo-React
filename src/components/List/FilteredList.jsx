@@ -20,6 +20,9 @@ const FilteredList  =(props)=> {
         </div>
         <ul>
             {list.map((element, index) => {
+                 if(val.length>0 && element !==val){
+                    return null;
+                }
                 return(
                       <Itemn    key={index} 
                  guestName={element} 
