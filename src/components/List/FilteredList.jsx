@@ -1,5 +1,6 @@
 import React, { useState }  from 'react';
 import Button from '../Button';
+import Itemn from './ItemnBtns';
 
 const FilteredList  =(props)=> {
     const [list,setList]= useState([]);
@@ -19,14 +20,18 @@ const FilteredList  =(props)=> {
         </div>
         <ul>
             {list.map((element, index) => {
-                if(val.length>0 && element !==val){
-                    return null;
-                }
-            return (        
-                 <li key={index}>
-                {element} <Button onClick={() => onDelete(index)}>X</Button>
-              </li>);
-         
+                return(
+                      <Itemn    key={index} 
+                 guestName={element} 
+                 onDelete={() => onDelete(index)}
+                 onEdit={(newName) => {
+                    const copiedList = [...list]; 
+                    copiedList[index] = newName; 
+                    setList(copiedList);
+                  }}
+                />
+                )
+          
             })}
             
          </ul>
