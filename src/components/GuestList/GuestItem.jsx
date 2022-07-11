@@ -13,16 +13,18 @@ const GuestItem = (props) => {
       <Button onClick={onDelete}>X</Button>
       <Button onClick={onToggleEdit}>Edit</Button>
       {isEditMode && (
-        <div>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            onEditGuest(editValue);
+            onToggleEdit();
+          }}
+        >
           <input value={editValue} onChange={onChange} />
-          <Button 
-            onClick={() => {
-              onEditGuest(editValue);
-              onToggleEdit();
-            }}>
+          <Button type="submit">
             Save
           </Button>
-        </div>
+        </form>
       )}
     </li>
   );
