@@ -13,16 +13,19 @@ const Itemn = (props) => {
         <Button onClick={onDelete}>X</Button> 
         <Button onClick={onToggleEdit}>Edit</Button>
         {editMode && (
-            <div>
-            <input value={editValue} onChange={onChange} />
-            <Button 
-                onClick={() => {
-                onEdit(editValue);
-                onToggleEdit();
+            
+            <form 
+                onSubmit={(e) => {
+                    e.preventDefault();
+                    onEdit(editValue);
+                    onToggleEdit();
                 }}>
+            <input value={editValue} onChange={onChange} />       
+            <Button type="submit">
                 Apply
             </Button>
-            </div>
+            </form>
+            
         )}
         </li>
     )

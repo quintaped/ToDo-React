@@ -12,7 +12,6 @@ const MyInput = (props) => {
   return (
       <div>  
         <input onChange={onChange}  value={value}  />
-        {value}
       </div>
   );
 };

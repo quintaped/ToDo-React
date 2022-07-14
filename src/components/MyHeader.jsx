@@ -14,14 +14,23 @@ const MyHeader = (props) => {
   const [headerName, setHeaderName]= useState ('Anonymous');
   return (
     <header className="header">
-      <FlexWrapper>
+      <FlexWrapper width="1000">
         <img width={logoSize} src={logo} />
         <p style={styles}>
-          <Button onClick={onToggleMenu} className='btn'>
+       <FlexWrapper width="500"> <form
+            onSubmit={(e) => {
+                e.preventDefault();
+                onToggleMenu();
+
+            }}
+            >
+          <Button type="submit"  className='btn'>
             {showSettings ? 'Close My Profile' : '  Open My Profile'}
           </Button>
           Hello,{headerName}!
           {showSettings &&  <MyInput onSetHeaderName={setHeaderName} headerName={headerName}/>}
+        </form>
+        </FlexWrapper>
         </p>
       </FlexWrapper>
     </header>

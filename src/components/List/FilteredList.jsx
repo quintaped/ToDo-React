@@ -6,15 +6,20 @@ const FilteredList  =(props)=> {
     const [list,setList]= useState([]);
     const [value, setValue] = useState("");
     const onChange = (e) =>  setValue(e.target.value); 
-    const onListAdd = () => setList([...list, value]);
+    const onListAdd = () => setList([...list, { id: new Date(), value }]);
     const onDelete = (idx) => setList(list.filter((list, index) => index !== idx ));
     const [val,setVal] =useState("")
  
    return (<>
-        <div>
+            <form
+            onSubmit={(e) => {
+                e.preventDefault();
+                onListAdd();
+            }}
+            >
             Add: <input onChange={onChange}   value={value}/> 
-            <Button onClick={onListAdd}>Add</Button>
-        </div>
+            <Button  type="submit" >Add</Button>
+            </form>
         <div>
         Filter: <input onChange={(e)=>setVal(e.target.value)} value={val} /> 
         </div>
@@ -24,12 +29,17 @@ const FilteredList  =(props)=> {
                     return null;
                 }
                 return(
-                      <Itemn    key={index} 
-                 guestName={element} 
+                      <Itemn 
+                 key={element.id} 
+                 guestName={element.value} 
                  onDelete={() => onDelete(index)}
                  onEdit={(newName) => {
                     const copiedList = [...list]; 
-                    copiedList[index] = newName; 
+                    const oldElement= list[index]; 
+                    copiedList[index] = {
+                        ...oldElement,
+                        value: newName,
+                      };
                     setList(copiedList);
                   }}
                 />
