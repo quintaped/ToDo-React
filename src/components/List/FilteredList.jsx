@@ -1,5 +1,6 @@
 import React, { useState }  from 'react';
 import Button from '../Button';
+import { useEffect } from 'react';
 import Itemn from './ItemnBtns';
 
 const FilteredList  =(props)=> {
@@ -9,7 +10,16 @@ const FilteredList  =(props)=> {
     const onListAdd = () => setList([...list, { id: new Date(), value }]);
     const onDelete = (idx) => setList(list.filter((list, index) => index !== idx ));
     const [val,setVal] =useState("")
- 
+    useEffect(() => {
+      const localListJSON = localStorage.getItem('List') || '[]';
+      const localList = JSON.parse(localListJSON);
+      setList(localList);
+    }, []);
+    useEffect(() => {
+      localStorage.setItem('List', JSON.stringify(list));
+    }, [list]);
+   
+
    return (<>
             <form
             onSubmit={(e) => {
@@ -25,8 +35,14 @@ const FilteredList  =(props)=> {
         </div>
         <ul>
             {list.map((element, index) => {
-                 if(val.length>0 && element !==val){
+                 if(val.length>0 && element.value!==val){
                     return null;
+                }
+                if(index===10){
+                return( 
+                 "Поздравляем! Вы добавили 10 гостей!"
+           
+                )
                 }
                 return(
                       <Itemn 

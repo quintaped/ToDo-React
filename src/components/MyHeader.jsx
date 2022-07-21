@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react';
 import logo from '../assets/logo.svg';
 import FlexWrapper from './FlexWrapper';
 import Button from './Button';
@@ -11,7 +12,15 @@ const MyHeader = (props) => {
   const styles={ fontSize:  fontSize};
   const [showSettings, setShowSettings] = useState(false);
   const onToggleMenu = () => setShowSettings(!showSettings);
-  const [headerName, setHeaderName]= useState ('Anonymous');
+  const [headerName, setHeaderName]= useState ('');
+  useEffect(() => {
+    const localHeaderName = localStorage.getItem('headerName') || 'Anonymous';
+    setHeaderName(localHeaderName);
+  }, []); 
+  useEffect(() => {
+    localStorage.setItem('headerName', headerName);
+  }, [headerName]);
+
   return (
     <header className="header">
       <FlexWrapper width="1000">
