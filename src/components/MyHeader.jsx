@@ -4,6 +4,7 @@ import FlexWrapper from './FlexWrapper';
 import Button from './Button';
 import MyInput from './MyInp/MyInput';
 import styles from './MyHeader.module.css';
+import { useUserName } from '../context/UserNameContext';
 
 const MyHeader = (props) => {
   const { fontSize} = props; // props.children
@@ -11,15 +12,7 @@ const MyHeader = (props) => {
   const styles={ fontSize:  fontSize};
   const [showSettings, setShowSettings] = useState(false);
   const onToggleMenu = () => setShowSettings(!showSettings);
-  const [headerName, setHeaderName]= useState ('');
-  useEffect(() => {
-    const localHeaderName = localStorage.getItem('headerName') || 'Anonymous';
-    setHeaderName(localHeaderName);
-  }, []); // call function only one time at start app
-  // order make sense
-  useEffect(() => {
-    localStorage.setItem('headerName', headerName);
-  }, [headerName]);
+  const { userName: headerName, setUserName: setHeaderName } = useUserName();
   return (
     <header className="header">
       <FlexWrapper>

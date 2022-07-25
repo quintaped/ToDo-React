@@ -28,7 +28,7 @@ const GuestList = () => {
         <ul>
           {guestList.map((guest, index) => {
             return (
-              <GuestItem 
+              <GuestItem
                 key={guest.id} 
                 guestName={guest.value} 
                 onDelete={() => onGuestDelete(index)}
