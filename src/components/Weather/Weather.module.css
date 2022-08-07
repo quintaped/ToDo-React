@@ -1,0 +1,52 @@
+.container {
+    width: 50vw;
+    height: 50vh;
+    padding: 10px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+.termocontainer {
+    margin: 0;
+    padding: 20px 10px;
+    padding-left: 40px;
+    border: 2px solid #69f0ae;
+    background-color: #e1f5fe;
+    color: #039be5;
+    height: 80%;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    position: relative;
+  }
+  
+  .termo {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .termoLine {
+    width: 5px;
+    position: absolute;
+    top: 25px;
+    bottom: 25px;
+    left: 20px;
+    border-radius: 2px;
+
+  }
+  .termoLineLevel{
+          background-color: red;
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      height: 0;
+      transition: height 1s ease-out;
+  }

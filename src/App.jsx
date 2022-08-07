@@ -5,6 +5,7 @@ import MyFooter from './components/MyFooter';
 import Counter from './components/Counter';
 import List from './components/List/List';
 import FilteredList from './components/List/FilteredList';
+import Weather from './components/Weather/Weather';
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
 
       <Counter startCounter={10} />
       <Counter startCounter={100} />
-      
+        
+       <Weather/> 
       <MyFooter  fontSize={12}>
         All rights reserved
       </MyFooter>

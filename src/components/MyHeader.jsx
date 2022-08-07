@@ -22,6 +22,7 @@ const MyHeader = (props) => {
   }, [headerName]);
 
   return (
+    
     <header className="header">
       <FlexWrapper width="1000">
         <img width={logoSize} src={logo} />
